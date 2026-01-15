@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+</head>
+<body>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <h2 style="margin:0;">Active Codes</h2>
+    <a href="{% url 'screenshot_upload' %}">Upload Screenshot</a>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+
+  <hr/>
+
+  {% if codes %}
+    <ul>
+      {% for c in codes %}
+        <li>
+          <a href="{% url 'code_download' c.id %}">{{ c.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Active code yo‘q.</p>
+  {% endif %}
+</body>
+</html>
