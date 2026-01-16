@@ -29,8 +29,9 @@ import os
 
 ALLOWED_HOSTS = os.getenv(
     "ALLOWED_HOSTS",
-    "127.0.0.1,localhost,.onrender.com,logger-e7wo.onrender.com"
+    "127.0.0.1,localhost,.onrender.com,logger-e7wo.onrender.com,www.suacademy.uz,suacademy.uz"
 ).split(",")
+
 
 ALLOWED_HOSTS = [h.strip() for h in ALLOWED_HOSTS if h.strip()]
 
